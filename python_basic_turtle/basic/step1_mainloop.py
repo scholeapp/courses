@@ -1,3 +1,0 @@
-from turtle import *
-
-mainloop()
