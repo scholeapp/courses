@@ -11,10 +11,11 @@ def home():
         file = request.files['file']
         image = Image.open(file)
         image = np.array(image)
-        x = image.reshape(-1, 3)  # kmeansのために、[H*W, 3]のshapeに変更。-1は自動計算される。
+        # kmeansのために、[H*W, 3]のshapeに変更。-1は自動計算される。
+        x = image.reshape(-1, 3)
         kmeans = KMeans(n_clusters=3, random_state=0)
         kmeans.fit(x)
-        print(kmeans.cluster_centers_)  # クラスターの重心3つ。 [3, 3]
+        print(kmeans.cluster_centers_)  # 重心3つ。 [3, 3]
 
     return '''
     <form method=post enctype=multipart/form-data>

@@ -8,9 +8,9 @@ app = Flask(__name__)
 def home():
     if request.method == 'POST':
         file = request.files['file']
-        image = Image.open(file)  # fileオブジェクトからImageオブジェクトを作成
-        image = np.array(image)[:, :, :3]  # Imageオブジェクトからnumpy.arrayを作成
-        print(image)  # 画像のデータを表示して確認
+        image = Image.open(file)
+        image = np.array(image)
+        print(image)  # 画像のデータを表示して確認。
         print(image.shape)  # RGBなら[H, W, 3]
 
     return '''

@@ -17,7 +17,8 @@ def home():
         kmeans = KMeans(n_clusters=3, random_state=0)
         kmeans.fit(x)
         
-        print(file.tell())  # 全てのbytesを読み出した後なので、ファイルの末尾を指している
+        # 全てのbytesを読み出した後なので、ファイルの末尾を指している
+        print(file.tell())
         file.seek(0)  # 0バイト目に移動
         print(file.tell()) # 0バイト目を指している
         file_bytes = file.read()  # 全てのbytesを読み出す
