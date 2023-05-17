@@ -1,0 +1,30 @@
+<form method=post enctype=multipart/form-data>
+  <div>
+    <label for="n_clusters">パレットの色の数</label>
+    <input type="number" name="n_clusters" min="1" value="3" style="width: 42px;" />
+  </div>
+  <div>
+  <label for="file">画像を選択</label>
+  <input type=file name=file id="file"/>
+  </div>
+  <div>
+  <input type=submit value="送信" />
+  </div>
+</form>
+{% if image %}
+<image id="img" src="data:;base64, {{image}}" style="width: 300px" />
+{% else %}
+<image id="img" style="width: 300px" />
+{% endif %}
+<div>
+{% for r, g, b in colors %}
+  <div
+    style='border:1px solid black;
+    display: inline-block;
+    height: 4rem;
+    width: 4rem;
+    background-color: rgb({{r}}, {{g}}, {{b}});'
+  ></div>
+{% endfor %}
+</div>
+
