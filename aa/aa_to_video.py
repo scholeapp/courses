@@ -1,5 +1,4 @@
 import cv2
-import os
 
 width = 1272
 height = 720

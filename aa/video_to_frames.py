@@ -22,6 +22,7 @@ count = 0
 while True:
     ret, image = vidcap.read()
     if not ret or cv2.waitKey(1) == ord('q'):
+        # break when q is pressed
         break
     cv2.imwrite("frames/frame%d.jpg" % count, image)
     print(count)
