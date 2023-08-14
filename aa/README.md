@@ -1,5 +1,7 @@
 ## Usage
 
+Create `frames/` and `aaframes/` directories at the top level. Then,
+
 1. video_to_frames.py
 2. frame_to_aa.py
 3. aa_to_video.py
