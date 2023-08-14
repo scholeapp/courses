@@ -1,3 +1,10 @@
+## Usage
+
+1. video_to_frames.py
+2. frame_to_aa.py
+3. aa_to_video.py
+
+## Compression (Bonus)
 If generated AA video is too heavy, you can compress with
 
 `ffmpeg -i input.mp4  -vcodec libx265 -crf 28 output.mp4`
